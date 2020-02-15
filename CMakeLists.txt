@@ -209,3 +209,7 @@ include_directories(
 add_executable(readernode src/readernode.cpp)
 target_link_libraries(readernode ${catkin_LIBRARIES})
 add_dependencies(readernode studentlaunch_generate_messages_cpp)
+add_executable(publisher src/publisher.cpp)
+target_link_libraries(publisher ${catkin_LIBRARIES})
+add_dependencies(publisher studentlaunch_generate_messages_cpp)
+
