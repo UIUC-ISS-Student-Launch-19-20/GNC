@@ -1,5 +1,13 @@
 # Ignore the virtual environment directory
 /env
+/atomic_configure
+/catkin
+/catkin_generated
+/devel
+/gtest
+CTestConfiguration.ini
+CTestCustom.cmake
+CTestTestfile.cmake
 /CMakeFiles
 cmake_install.cmake
 CMakeCache.txt
