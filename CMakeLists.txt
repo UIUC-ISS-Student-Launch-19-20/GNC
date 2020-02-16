@@ -11,7 +11,11 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
+  cv_bridge
+  image_transport
 )
+find_package(OpenCV REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -118,6 +122,7 @@ catkin_package(
 include_directories(
  include
   ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -213,5 +218,5 @@ add_executable(rcoverridenode src/rcoverridenode.cpp)
 target_link_libraries(rcoverridenode ${catkin_LIBRARIES})
 add_dependencies(rcoverridenode studentlaunch_generate_messages_cpp)
 add_executable(navigator src/navigator.cpp)
-target_link_libraries(navigator ${catkin_LIBRARIES})
-add_dependencies(navigator studentlaunch_generate_messages_cpp)
+target_link_libraries(navigator ${catkin_LIBRARIES} ${OpenCV_LIBS})
+add_dependencies(navigator studentlaunch_generate_messages_cpp OpenCV.cpp)
