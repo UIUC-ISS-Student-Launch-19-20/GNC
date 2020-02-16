@@ -214,9 +214,11 @@ include_directories(
 add_executable(readernode src/readernode.cpp)
 target_link_libraries(readernode ${catkin_LIBRARIES})
 add_dependencies(readernode studentlaunch_generate_messages_cpp)
+
 add_executable(rcoverridenode src/rcoverridenode.cpp)
 target_link_libraries(rcoverridenode ${catkin_LIBRARIES})
 add_dependencies(rcoverridenode studentlaunch_generate_messages_cpp)
+
 add_executable(navigator src/navigator.cpp)
 target_link_libraries(navigator ${catkin_LIBRARIES} ${OpenCV_LIBS})
 add_dependencies(navigator studentlaunch_generate_messages_cpp OpenCV.cpp)
